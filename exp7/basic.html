@@ -1,0 +1,31 @@
+
+
+<html>
+  <head>
+	  <!--    <script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.9/p5.min.js"></script> -->
+    <!--<script language="javascript" type="text/javascript" src="sketch.js"></script>-->
+    <script language="javascript" type="text/javascript" src="socket.io-1.4.5.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jsnetworkx.js"></script>
+  </head>
+  <body>
+	  <div id="canvas"></div>
+<script type="text/javascript">
+	var socket;
+var peerList=new Set();
+
+
+socket = io.connect('http://localhost:8899');
+socket.on('peer',
+    // When we receive data
+    function(peerId) {
+		console.log(peerId);
+		peerList.add(peerId);
+		console.log(peerList);
+}
+  );
+
+    </script>
+
+  </body>
+</html>
