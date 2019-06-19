@@ -41,23 +41,21 @@ feed.createReadStream({live:true})
 
 var swarm = discovery()
 
-/*
 feed.ready(function () {
   // we use the discovery as the topic
-  swarm.join(feed.discoveryKey)
-  swarm.on('connection', function (connection) {
-    console.log('(New peer connected!)')
-	data={"ip":2323};
+//  swarm.join(feed.discoveryKey)
+//  swarm.on('connection', function (connection) {
+ //   console.log('(New peer connected!)')
+//	data={"ip":2323};
     // We use the pump module instead of stream.pipe(otherStream)
     // as it does stream error handling, so we do not have to do that
     // manually.
     
     // See below for more detail on how this work.
-    pump(connection, feed.replicate({ live: true }), connection)
-  })
+   // pump(connection, feed.replicate({ live: true }), connection)
+  //})
   console.log('public key:', feed.key.toString('hex'))
 })
-*/
 
 // Using the filesystem module
 var fs = require('fs');

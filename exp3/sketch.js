@@ -28,6 +28,7 @@ socket.on('peer',
       x=100;
       y=100;
       // Draw a blue circle
+      background(0);
       fill(255,0,0);
       noStroke();
       ellipse(x,y,80,80);
