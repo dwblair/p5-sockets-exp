@@ -95,6 +95,7 @@ io.sockets.on('connection',
 		id=my_id;
 	})
 	
+	
     headless.onPeerConnected((peerId) => {
         //send_packet={ type: "peerConnected", data: peerId};
         //console.log(send_packet);
@@ -103,6 +104,9 @@ io.sockets.on('connection',
         console.log('headless.peers(): '+headless.peers());
         console.log('local key: '+id);
         send_packet={'local_key':id,'peer':peerId};
+        
+        //headless.post({'channel':'testing','message':'test! saw:'+peerId});
+        
         //socket.broadcast.emit('peer',peerId.substring(0,5) );
         //socket.broadcast.emit('peer',peerId);
         socket.broadcast.emit('peer',send_packet);

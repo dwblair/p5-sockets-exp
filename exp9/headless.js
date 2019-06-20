@@ -117,7 +117,10 @@ Headless.prototype.onPeerDisconnected = function (cb) {
 
 Headless.prototype.onMessageReceived = function (cb) {
   this.instance(() => {
-      this.cabal.messages.events.on('message', (data) => { this._msgRecv(data, cb) })
+      this.cabal.messages.events.on('message', (data) => {
+		  //console.log(data); 
+		  this._msgRecv(data, cb); 
+	})
   })
 }
 

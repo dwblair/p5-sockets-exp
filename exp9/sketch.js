@@ -37,11 +37,25 @@ socket.on('peer',
 		text(item,x,y);
 		y=y+20;
 	  });
-	  
-	    
     }
   );
 
+socket.on('message',
+    // When we receive data
+    function(info) {
+	 //background(200,200,200);
+      console.log(info);
+      sender=info.key.substring(0,5);
+      message=info.value.content.text;
+      console.log('sender:'+sender);
+      console.log('message:'+message);
+	  fill(0,0,255);
+      noStroke();
+      text(message,300,y);
+	  y=y+20;
+    }
+  );
+  
 }
 
 function draw() {
